@@ -158,8 +158,8 @@ mod tests {
 
     #[test]
     fn test_decode() {
-        let inp = [1002, 4, 3, 4, 33];
-        assert_eq!(Operation::decode(&inp[0..]), Operation::Add { left_op: (ParameterMode::Position, 0), right_op: (ParameterMode::Immediate, 0), dest_pos: 0 });
+        let inp = [1001, 4, 3, 4, 99];
+        assert_eq!(Operation::decode(&inp[0..]), Operation::Add { left_op: (ParameterMode::Position, 4), right_op: (ParameterMode::Immediate, 3), dest_pos: 4 });
         assert_eq!(Operation::decode(&inp[4..]), Operation::Halt);
     }
 
