@@ -47,10 +47,3 @@ fn run(input: &[u8]) -> Result<usize, Box<dyn Error + 'static>> {
     let min_zero_layer = &layers[0];
     Ok(min_zero_layer.count_pixels(b'1') * min_zero_layer.count_pixels(b'2'))
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-}
-

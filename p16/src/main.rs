@@ -105,9 +105,3 @@ fn run(input: &[u8]) -> Result<Image, Box<dyn Error + 'static>> {
 
     Ok(Image::from_layers(layers))
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-}
-
