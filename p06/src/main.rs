@@ -271,14 +271,10 @@ fn run(inp: &str) -> Result<usize, Error> {
     let mut wire_2: Wire = instructions.next().ok_or_else(|| "not enough lines")?.parse()?;
 
     let intersect = wire_1.intersect(&wire_2);
-    let self_intersect_1 = wire_1.intersect(&wire_1);
-    let self_intersect_2 = wire_2.intersect(&wire_2);
 
     wire_1.cut_at(&intersect);
-    // wire_1.cut_at(&self_intersect_1);
 
     wire_2.cut_at(&intersect);
-    // wire_2.cut_at(&self_intersect_2);
 
     let graph_1 = wire_1.to_graph();
     let graph_2 = wire_2.to_graph();
