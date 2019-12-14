@@ -220,26 +220,6 @@ mod tests {
     }
 
     #[test]
-    fn test_advance() {
-        let mut moon = Moon {
-            position: Position { x: 2, y: -3, z: -14 },
-            velocity: Velocity { dx: 0, dy: 0, dz: 0 },
-        };
-        moon.advance();
-        assert_eq!(moon, Moon {
-            position: Position { x: 2, y: -3, z: -14 },
-            velocity: Velocity { dx: 0, dy: 0, dz: 0 },
-        });
-
-        moon.velocity = Velocity { dx: 2, dy: 1, dz: -3 };
-        moon.advance();
-        assert_eq!(moon, Moon {
-            position: Position { x: 4, y: -2, z: -17 },
-            velocity: Velocity { dx: 2, dy: 1, dz: -3 },
-        })
-    }
-
-    #[test]
     fn test_repeat() {
         let input = "<x=-1, y=0, z=2>
 <x=2, y=-10, z=-7>
